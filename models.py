@@ -1,10 +1,11 @@
 
 from flask_sqlalchemy import SQLAlchemy
 
-database_path = os.environ['DATABASE_URL']
+DATABASE_URL = 'postgres://nmxfizlakzdgaz:ada5d09042ff477844f67a4f9de1e9947a54ee02b7a368d2d868aaf9976fcfcf@ec2-34-235-108-68.compute-1.amazonaws.com:5432/dfhdpn00n6lms7'
+
 db = SQLAlchemy()
 
-def db_setup(app, database_path = DATABASE_PATH):
+def db_setup(app, database_path = DATABASE_URL):
     app.config['SQLALCHEMY_DATABASE_URI']= database_path
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
     db.app = app

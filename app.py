@@ -16,6 +16,10 @@ def create_app():
 # Endpoints
 #----------------------------------------------------------------------------#
 
+    @app.route('/') 
+    def home(): return 'Welcome to capstone'
+
+
 # TODO DONE implement endpoint GET /movies
 
     @app.route('/movies')
@@ -174,7 +178,7 @@ def create_app():
 
     return app
 
-    app = create_app()
+app = create_app()
 
-    if __name__ =='__main__':
-        app.run()
+if __name__ =='__main__':
+    app.run()
