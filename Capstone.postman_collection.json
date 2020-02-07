@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0afecd4c-8ad2-4aa4-b5b9-52ef81f6f07b",
+		"_postman_id": "9123efa0-e7ed-492b-9a84-6cb55afa87ca",
 		"name": "Capstone",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -30,10 +30,41 @@
 		{
 			"name": "post actors",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1URkNSRGMyUWpsRVFqTTNRamhCTUVJNE9EQkJOVGN6UkRZMk5qVkZOVVE1UlRJNU56UkNSUSJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3AwMS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUzZDZlN2M1MWYxMWUwZTdkZjg2NzRjIiwiYXVkIjoiY29mZmVlIiwiaWF0IjoxNTgxMDg5NTE5LCJleHAiOjE1ODEwOTY3MTksImF6cCI6ImpJR1liYkJmOFlzREhZMFV2QXlQNHNaMkY3RTlBNkRUIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyJdfQ.GuyMru2aE1vl6LOvGm2bqUxrgotCGUobWSSMjZHRRR5ndnku-hwGktUSbbV7UPkI5fOudykAlkSNLodYZkS_kfX3B5S7ZbYOO37ykbBA3r7PcoT0sxfGRBXlMd6Y6MJZn7ME8tMDn45F5rvZNxrflr7vWbVJFuUWN2j2owITKGgGWf40AS6vEUlxia2-M5dQL9-EmgapbI8E2BCdkWLYFuElzaR5BmggRJuvEnk8dBSre76m1S9AM8ja6AAwAYVEvv3pOIi7J37jzhBL5AoaCIrQi4N8MgbGV1_nnmIf5b20HQMMrIcIeTJWV80d8crXnytGC5guI3ERK02ENDfDGw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"age\": 25,\n  \"gender\": \"Female\",\n  \"name\": \"New\"\n}"
+				},
 				"url": {
-					"raw": ""
+					"raw": "http://127.0.0.1:5000/actors",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"actors"
+					]
 				}
 			},
 			"response": []
@@ -46,7 +77,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEdORGRETVRoQk1FWXhOVEJFUVRBNU9FSkVOa0kxTkRrMFJFRTJRVFJHUlVFNU9VRTJOUSJ9.eyJpc3MiOiJodHRwczovL2VsbGllc2VycnkuYXV0aDAuY29tLyIsInN1YiI6Imdvb2dsZS1vYXV0aDJ8MTA2MjkzOTU0MDU5NzkxNzYzODM1IiwiYXVkIjpbImNvZmZlZXNob3AiLCJodHRwczovL2VsbGllc2VycnkuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTU4MDUwNjkxOCwiZXhwIjoxNTgwNTkzMzE4LCJhenAiOiJiOFEzNDE4SU9WN1hoZHlVcjBaaGZ4UmYxcFgzUVoycyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyJdfQ.k9u3DRUojGq-gUWjn56EN4AlTDtRG-U0JjqsLeZWgOXfpgrwir5rXHAZAC91yvm4wleABNlgIQfyt1_ay8fQyUfuE9Eh985Kd9yWl3kyQvePNjaERIcuUW4NLNQknZaAvlJCv4MF__CUoCPj2tuzikf25ri5AfjyyxAwiww5YpeRtrlAWaGQcuv7FyLw03MEtF6lu_WsJ3C72Um4TYpWWe2pi4V273YiICicPaerShjh5yoUEUMgJeXjnlObtbLjszggDlNTAN18QOMTjASlvEfxAXuCaXZ2gkiwqgC6S5FD-W93vBykCELKhJ2aVvqDFr3fn-6ehF-Rf2Y1xgo3Bg",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1URkNSRGMyUWpsRVFqTTNRamhCTUVJNE9EQkJOVGN6UkRZMk5qVkZOVVE1UlRJNU56UkNSUSJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3AwMS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUzZDZlN2M1MWYxMWUwZTdkZjg2NzRjIiwiYXVkIjoiY29mZmVlIiwiaWF0IjoxNTgxMDk0MjU2LCJleHAiOjE1ODExMDE0NTYsImF6cCI6ImpJR1liYkJmOFlzREhZMFV2QXlQNHNaMkY3RTlBNkRUIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyJdfQ.pxMwhcpu1GrQ2yaZ5JMPfDPvd4DW87gQwajzvcKzWJbxvMCjMY0HrtVMIyacn78j5tFIqfcvFbnGIDHda9uzTqUQH1LtOr4uAcWepaLeVjfQbA6ZjuzlPsqMscZFQJut6qUaK0xBHGmsxxcDQm_iuQ5hULSIJ3--QQKRKdqCdKj1NnXf_OsV80uPyu-ymVGgLJUrDuFZRX-iXp9FWgWSN7au6rYuwwxoKbBvtHX1Q-uuHiDv9WzAc1YoUWvR8fQxa8XBuNNFZppKtPKZPYn0rAZ2Rt4Fxj2ZxN44XYLBIB3IJhrbL_0cpr4bGr1tekOoi_19C7MvxDvWOt2WqnzWnw",
 							"type": "string"
 						}
 					]
@@ -62,7 +93,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"title\": \"maline\",\n\t\"release_date\": \"3:00pm\"\n\t\n\t\n}",
+					"raw": "{\n\t\"title\": \"new movie1\",\n\t\"release_date\": \"3:00pm\"\n\t\n\t\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -89,10 +120,42 @@
 		{
 			"name": "updateactors",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1URkNSRGMyUWpsRVFqTTNRamhCTUVJNE9EQkJOVGN6UkRZMk5qVkZOVVE1UlRJNU56UkNSUSJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3AwMS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUzZDZlN2M1MWYxMWUwZTdkZjg2NzRjIiwiYXVkIjoiY29mZmVlIiwiaWF0IjoxNTgxMDk0MjU2LCJleHAiOjE1ODExMDE0NTYsImF6cCI6ImpJR1liYkJmOFlzREhZMFV2QXlQNHNaMkY3RTlBNkRUIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyJdfQ.pxMwhcpu1GrQ2yaZ5JMPfDPvd4DW87gQwajzvcKzWJbxvMCjMY0HrtVMIyacn78j5tFIqfcvFbnGIDHda9uzTqUQH1LtOr4uAcWepaLeVjfQbA6ZjuzlPsqMscZFQJut6qUaK0xBHGmsxxcDQm_iuQ5hULSIJ3--QQKRKdqCdKj1NnXf_OsV80uPyu-ymVGgLJUrDuFZRX-iXp9FWgWSN7au6rYuwwxoKbBvtHX1Q-uuHiDv9WzAc1YoUWvR8fQxa8XBuNNFZppKtPKZPYn0rAZ2Rt4Fxj2ZxN44XYLBIB3IJhrbL_0cpr4bGr1tekOoi_19C7MvxDvWOt2WqnzWnw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"age\": 25,\n  \"gender\": \"Female\",\n  \"name\": \"New updated\"\n}"
+				},
 				"url": {
-					"raw": ""
+					"raw": "http://127.0.0.1:5000/actors/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"actors",
+						"1"
+					]
 				}
 			},
 			"response": []
@@ -100,10 +163,42 @@
 		{
 			"name": "updatemovies",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1URkNSRGMyUWpsRVFqTTNRamhCTUVJNE9EQkJOVGN6UkRZMk5qVkZOVVE1UlRJNU56UkNSUSJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3AwMS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUzZDZlN2M1MWYxMWUwZTdkZjg2NzRjIiwiYXVkIjoiY29mZmVlIiwiaWF0IjoxNTgxMDk0MjU2LCJleHAiOjE1ODExMDE0NTYsImF6cCI6ImpJR1liYkJmOFlzREhZMFV2QXlQNHNaMkY3RTlBNkRUIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyJdfQ.pxMwhcpu1GrQ2yaZ5JMPfDPvd4DW87gQwajzvcKzWJbxvMCjMY0HrtVMIyacn78j5tFIqfcvFbnGIDHda9uzTqUQH1LtOr4uAcWepaLeVjfQbA6ZjuzlPsqMscZFQJut6qUaK0xBHGmsxxcDQm_iuQ5hULSIJ3--QQKRKdqCdKj1NnXf_OsV80uPyu-ymVGgLJUrDuFZRX-iXp9FWgWSN7au6rYuwwxoKbBvtHX1Q-uuHiDv9WzAc1YoUWvR8fQxa8XBuNNFZppKtPKZPYn0rAZ2Rt4Fxj2ZxN44XYLBIB3IJhrbL_0cpr4bGr1tekOoi_19C7MvxDvWOt2WqnzWnw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"new movie1\",\n\t\"release_date\": \"3:00pm\"\n}"
+				},
 				"url": {
-					"raw": ""
+					"raw": "http://127.0.0.1:5000/movies/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"movies",
+						"1"
+					]
 				}
 			},
 			"response": []
@@ -111,10 +206,42 @@
 		{
 			"name": "deleteactors",
 			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1URkNSRGMyUWpsRVFqTTNRamhCTUVJNE9EQkJOVGN6UkRZMk5qVkZOVVE1UlRJNU56UkNSUSJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3AwMS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUzZDZlN2M1MWYxMWUwZTdkZjg2NzRjIiwiYXVkIjoiY29mZmVlIiwiaWF0IjoxNTgxMDk0MjU2LCJleHAiOjE1ODExMDE0NTYsImF6cCI6ImpJR1liYkJmOFlzREhZMFV2QXlQNHNaMkY3RTlBNkRUIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyJdfQ.pxMwhcpu1GrQ2yaZ5JMPfDPvd4DW87gQwajzvcKzWJbxvMCjMY0HrtVMIyacn78j5tFIqfcvFbnGIDHda9uzTqUQH1LtOr4uAcWepaLeVjfQbA6ZjuzlPsqMscZFQJut6qUaK0xBHGmsxxcDQm_iuQ5hULSIJ3--QQKRKdqCdKj1NnXf_OsV80uPyu-ymVGgLJUrDuFZRX-iXp9FWgWSN7au6rYuwwxoKbBvtHX1Q-uuHiDv9WzAc1YoUWvR8fQxa8XBuNNFZppKtPKZPYn0rAZ2Rt4Fxj2ZxN44XYLBIB3IJhrbL_0cpr4bGr1tekOoi_19C7MvxDvWOt2WqnzWnw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
 					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/actors/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"actors",
+						"3"
+					]
 				},
 				"description": "delete"
 			},
@@ -123,10 +250,42 @@
 		{
 			"name": "deletemovies",
 			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1URkNSRGMyUWpsRVFqTTNRamhCTUVJNE9EQkJOVGN6UkRZMk5qVkZOVVE1UlRJNU56UkNSUSJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3AwMS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUzZDZlN2M1MWYxMWUwZTdkZjg2NzRjIiwiYXVkIjoiY29mZmVlIiwiaWF0IjoxNTgxMDk0MjU2LCJleHAiOjE1ODExMDE0NTYsImF6cCI6ImpJR1liYkJmOFlzREhZMFV2QXlQNHNaMkY3RTlBNkRUIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyJdfQ.pxMwhcpu1GrQ2yaZ5JMPfDPvd4DW87gQwajzvcKzWJbxvMCjMY0HrtVMIyacn78j5tFIqfcvFbnGIDHda9uzTqUQH1LtOr4uAcWepaLeVjfQbA6ZjuzlPsqMscZFQJut6qUaK0xBHGmsxxcDQm_iuQ5hULSIJ3--QQKRKdqCdKj1NnXf_OsV80uPyu-ymVGgLJUrDuFZRX-iXp9FWgWSN7au6rYuwwxoKbBvtHX1Q-uuHiDv9WzAc1YoUWvR8fQxa8XBuNNFZppKtPKZPYn0rAZ2Rt4Fxj2ZxN44XYLBIB3IJhrbL_0cpr4bGr1tekOoi_19C7MvxDvWOt2WqnzWnw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
 					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/movies/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"movies",
+						"7"
+					]
 				},
 				"description": "delete"
 			},

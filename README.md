@@ -4,8 +4,7 @@ Capstone is a casting ungency
 
 Heroku
 
-Follow the link above to access the deployed app on heroku https://
-casting-capstone.herokuapp.com/
+Follow the link above to access the deployed app on heroku https://capstone4.herokuapp.com/
 Getting Started
 Installing Dependencies
 Python 3.7

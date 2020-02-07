@@ -24,7 +24,7 @@ def create_app():
 
     @app.route('/movies')
     @requires_auth('get:movies')
-    def get_all_movies():
+    def get_all_movies(payload):
         movies = Movie.query.all()
         return jsonify({
             "success": True,
@@ -34,7 +34,7 @@ def create_app():
 # TODO DONE implement endpoint GET /actors
     @app.route('/actors')
     @requires_auth('get:actors')
-    def get_all_actors():
+    def get_all_actors(payload):
         actors = Actor.query.all()
         return jsonify({
             "success": True,
@@ -44,10 +44,10 @@ def create_app():
 # TODO-DONE implement endpoint POST /movies    
     @app.route('/movies', methods=['POST'])
     @requires_auth('post:movies')
-    def create_movie():
-        data = request.get_json()
-        title = data.get('title')
-        release_date = data.get('release_date')
+    def create_movie(payload):
+        body = request.get_json()
+        title = body.get('title')
+        release_date = body.get('release_date')
         movie = Movie(title=title, release_date=release_date)
         movie.insert()
         return jsonify({
@@ -58,7 +58,7 @@ def create_app():
 # TODO-DONE implement endpoint POST /actors
     @app.route('/actors', methods=['POST'])
     @requires_auth('post:actors')
-    def create_actor():
+    def create_actor(payload):
         data = request.get_json()
         name = data.get('name')
         age = data.get('age')
@@ -78,7 +78,7 @@ def create_app():
 # TODO DONE implement endpoint PATCH /movies/<id>
     @app.route('/movies/<int:id>', methods =['PATCH'])
     @requires_auth('patch:movies')
-    def edit_movie(id):
+    def edit_movie(payload, id):
         data = request.get_json()
         movies = Movie.query.filter(Movie.id ==id).one_or_none()
         if not movies:
@@ -93,7 +93,7 @@ def create_app():
 # TODO DONE implement endpoint PATCH /actors/<id>
     @app.route('/actors/<int:id>', methods =['PATCH'])
     @requires_auth('patch:actors')
-    def edit_actor(id):
+    def edit_actor(payload, id):
         data = request.get_json()
         actor = Actor.query.filter(Actor.id ==id).one_or_none()
         if not actor:
@@ -110,7 +110,7 @@ def create_app():
 # TODO DONE implement endpoint DELETE /movies/<drink_id>    
     @app.route('/movies/<int:id>', methods=['DELETE'])
     @requires_auth('delete:movies')
-    def delete_movies(id):
+    def delete_movies(payload, id):
         movie = Movie.query.filter(Movie.id ==id).one_or_none()
         if not movie:
             abort(404)
@@ -123,13 +123,13 @@ def create_app():
 # TODO DONE implement endpoint DELETE /actors/<drink_id>    
     @app.route('/actors/<int:id>', methods=['DELETE'])
     @requires_auth('delete:actors')
-    def delete_actors(id):
+    def delete_actors(payload, id):
         actor = Actor.query.filter(Actor.id ==id).one_or_none()
         if not actor:
             abort(404)
-        # actor.delete()
-        db.session.add(actor)
-        db.session.commit()
+        actor.delete()
+        # db.session.add(actor)
+        # db.session.commit()
         return jsonify({
             "success": True,
             "delete": id

@@ -9,9 +9,13 @@ from jose import jwt
 # Auth0 Config
 #----------------------------------------------------------------------------#
 
-AUTH0_DOMAIN = 'capstone0201.auth0.com'
+# AUTH0_DOMAIN = 'capstone0201.auth0.com'
+# ALGORITHMS = ['RS256']
+# API_AUDIENCE = 'Tj0FtObJMX5vs66rqPGkK0BZRlcnFYt1'
+
+AUTH0_DOMAIN = 'coffeeshop01.auth0.com'
 ALGORITHMS = ['RS256']
-API_AUDIENCE = 'Tj0FtObJMX5vs66rqPGkK0BZRlcnFYt1'
+API_AUDIENCE = 'coffee'
 
 #----------------------------------------------------------------------------#
 # AuthError Exception
@@ -147,25 +151,42 @@ def verify_decode_jwt(token):
         'description': 'Unable to find the appropriate key.'
     }, 401)
 
-''' Authentification Wrapper to decorate Endpoints with
-*Input:
-    <string> permission (i.e. 'post:movies')
-uses the get_token_auth_header method to get the token
-uses the verify_decode_jwt method to decode the jwt
-uses the check_permissions method validate claims and check the requested permission
-return the decorator which passes the decoded payload to the decorated method
-'''
-
 def requires_auth(permission=''):
+    ''' Authentification Wrapper to decorate Endpoints with
+    *Input:
+        <string> permission (i.e. 'post:drink')
+    uses the get_token_auth_header method to get the token
+    uses the verify_decode_jwt method to decode the jwt
+    uses the check_permissions method validate claims and check the requested permission
+    return the decorator which passes the decoded payload to the decorated method
+    '''
     def requires_auth_decorator(f):
         @wraps(f)
         def wrapper(*args, **kwargs):
-            # global payload
             token = get_token_auth_header()
-            payload = verify_decode_jwt(token)
+            try:
+                payload = verify_decode_jwt(token)
+            except:
+                raise AuthError({
+                    'code': 'unauthorized',
+                    'description': 'Permissions not found'
+                }, 401)
             check_permissions(permission, payload)
-            return f(*args, **kwargs)
-
+            return f(payload, *args, **kwargs)
         return wrapper
-
     return requires_auth_decorator
+
+# def requires_auth(permission=''):
+#     def requires_auth_decorator(f):
+#         @wraps(f)
+#         def wrapper(*args, **kwargs):
+#             # global payload
+#             token = get_token_auth_header()
+#             payload = verify_decode_jwt(token)
+#             check_permissions(permission, payload)
+#             return f(*args, **kwargs)
+
+#         return wrapper
+
+#     return requires_auth_decorator
+
