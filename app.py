@@ -128,14 +128,12 @@ def create_app():
         if not actor:
             abort(404)
         actor.delete()
-        # db.session.add(actor)
-        # db.session.commit()
         return jsonify({
             "success": True,
             "delete": id
         }), 200
-## Error Handling
 
+## Error Handling
     @app.errorhandler(422)
     def unprocessable(error):
         return jsonify({
@@ -174,7 +172,16 @@ def create_app():
             "success": False,
             "error": 401,
             "message": "unauthorized user, please login and try again."
-            }), 40
+            }), 401
+
+    @app.errorhandler(AuthError)
+    def handle_auth_error(error):
+        return jsonify({
+            "success": False,
+            "error": error.status_code,
+            "message": error.error.code
+            }), error.status_code
+
 
     return app
 

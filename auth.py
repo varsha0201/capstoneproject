@@ -9,10 +9,6 @@ from jose import jwt
 # Auth0 Config
 #----------------------------------------------------------------------------#
 
-# AUTH0_DOMAIN = 'capstone0201.auth0.com'
-# ALGORITHMS = ['RS256']
-# API_AUDIENCE = 'Tj0FtObJMX5vs66rqPGkK0BZRlcnFYt1'
-
 AUTH0_DOMAIN = 'coffeeshop01.auth0.com'
 ALGORITHMS = ['RS256']
 API_AUDIENCE = 'coffee'

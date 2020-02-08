@@ -83,6 +83,4 @@ class Movie(db.Model):
             'title': self.title,
             'release_date' : self.release_date
         }
-      
-# db.init_app(app)
-# db.create_all()
+
